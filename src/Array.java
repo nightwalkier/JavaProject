@@ -6,9 +6,41 @@ public class Array {
     static Random random = new Random();
     public static void main(String[] args){
        // while(true)testDoWhile1();
-        z6_84();
+        z6_85();
     }
 
+    static void z6_85(){
+        System.out.print("N= ");
+        int N = scanner.nextInt();
+
+        boolean is2 = false;
+        boolean is5 = false;
+        int n=N;
+        int pos2 =-1;
+        int pos5 =-1;
+        int counter = 0;
+        while (n !=0){
+            int d = n%10;//взяли последнюю цифру с числа n
+            if (d == 2){
+                is2 = true;
+                pos2 = counter;
+            }
+            if (d == 5){
+                is5 = true;
+                pos5 = counter;
+            }
+            counter++;
+            n = n/10;
+        }
+
+        if (is2 && is5){
+            if (pos2 > pos5){
+                System.out.println("2 is more left");
+            }else{
+                System.out.println("5 is more left");
+            }
+        }
+    }
     static void z6_84(){
         System.out.print("N= ");
         int N = scanner.nextInt();
